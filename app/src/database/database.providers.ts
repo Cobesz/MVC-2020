@@ -1,5 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
-// import { Cat } from '../cats/cat.entity';
+import { ConfigService } from '../config/config.service';
+
+const configService = new ConfigService(`${process.env.NODE_ENV}.env`);
 
 export const databaseProviders = [
     {
@@ -9,8 +11,10 @@ export const databaseProviders = [
                 dialect: 'mysql',
                 host: 'localhost',
                 port: 3306,
-                username: 'cas',
-                password: 'ccoff64b',
+                username: configService.get('DATABASE_USER'),
+                password: configService.get('DATABASE_PASSWORD'),
+                // username: process.env.DATABASE_USER,
+                // password: process.env.DATABASE_PASSWORD,
                 database: 'mvc-2020',
             });
             // sequelize.addModels([Cat]);
