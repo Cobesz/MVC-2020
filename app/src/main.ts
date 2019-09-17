@@ -14,6 +14,7 @@ async function bootstrap() {
   hbs.registerPartials(join(__dirname, '..', 'views', 'partials'));
 
   await app.listen(3000);
+
 }
 
 bootstrap();

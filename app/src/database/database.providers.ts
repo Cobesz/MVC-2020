@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
 import { ConfigService } from '../config/config.service';
+import {User} from '../models/User/user.entity';
 
 const configService = new ConfigService(`${process.env.NODE_ENV}.env`);
 
@@ -17,7 +18,7 @@ export const databaseProviders = [
                 // password: process.env.DATABASE_PASSWORD,
                 database: 'mvc-2020',
             });
-            // sequelize.addModels([Cat]);
+            sequelize.addModels([User]);
             await sequelize.sync();
             return sequelize;
         },
