@@ -5,12 +5,6 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  @Render('home')
-  root() {
-    return { title: 'Home Page' };
-  }
-
   @Get('/about')
   @Render('about')
   about() {
