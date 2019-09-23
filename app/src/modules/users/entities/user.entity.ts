@@ -4,10 +4,14 @@ import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
 export class User {
     @PrimaryGeneratedColumn()
     id: string;
-    @Column({unique: true})
-    email: string;
-    @Column({unique: true})
-    username: string;
+    @Column({unique: false})
+    firstName: string;
+    @Column({unique: false})
+    middleName: string;
+    @Column({nullable: false})
+    lastName: string;
     @Column({nullable: true})
-    displayName: string;
+    email: string;
+    @Column({nullable: false})
+    password: string; // TODO: hash this
 }
