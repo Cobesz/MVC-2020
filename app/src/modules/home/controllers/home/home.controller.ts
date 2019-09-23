@@ -3,7 +3,6 @@ import {Crud, CrudController} from '@nestjsx/crud';
 import {HomeService} from '../../services/home/home.service';
 
 @Controller()
-
 export class HomeController {
     constructor(public service: HomeService) {
 
@@ -12,6 +11,6 @@ export class HomeController {
     @Get()
     @Render('home')
     root() {
-        return { title: 'Home Page' };
+        return {title: 'Home Page'};
     }
 }

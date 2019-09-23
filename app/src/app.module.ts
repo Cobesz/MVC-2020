@@ -9,6 +9,7 @@ import {ConfigModule} from './config/config.module';
 import {RouterModule, Routes} from 'nest-router';
 import {HomeModule} from './modules/home/home.module';
 import {routes} from './router/routes';
+import {AboutModule} from './modules/about/about.module';
 
 const configService = new ConfigService(`${process.env.NODE_ENV}.env`);
 
@@ -17,7 +18,6 @@ const password = configService.get('DATABASE_PASSWORD') || 'example';
 
 @Module({
     imports: [
-        RouterModule.forRoutes(routes),
         TypeOrmModule.forRoot({
             type: 'mysql',
             host: 'localhost',
@@ -28,9 +28,13 @@ const password = configService.get('DATABASE_PASSWORD') || 'example';
             entities: [__dirname + '/**/*.entity{.ts,.js}'],
             synchronize: true,
         }),
-        UsersModule, ConfigModule,
+        HomeModule,
+        AboutModule,
+        UsersModule,
+        ConfigModule,
+        RouterModule.forRoutes(routes),
     ],
-    controllers: [AppController],
+    // controllers: [AppController],
     providers: [AppService],
 })
 export class AppModule {
