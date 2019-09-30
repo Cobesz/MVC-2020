@@ -9,6 +9,6 @@ export class WatchList {
     name: string;
     @Column()
     userId: number;
-    @ManyToOne(type => User, user => user.watchlists, { nullable: true })
+    @ManyToOne(type => User, user => user.watchlists, { nullable: false })
     user: User;
 }
