@@ -6,6 +6,7 @@ import {WishlistsModule} from '../modules/wishlists/wishlists.module';
 import {GamesModule} from '../modules/games/games.module';
 import {ScreenshotsModule} from "../modules/screenshots/screenshots.module";
 import {TrailersModule} from "../modules/trailers/trailers.module";
+import {PlatformsModule} from "../modules/platforms/platforms.module";
 
 export const routes: Routes = [
     {
@@ -45,5 +46,9 @@ export const routes: Routes = [
     {
         path: '/trailers',
         module: TrailersModule,
+    },
+    {
+        path: '/platforms',
+        module: PlatformsModule,
     },
 ];

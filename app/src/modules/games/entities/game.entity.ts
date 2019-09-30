@@ -2,6 +2,7 @@ import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, RelationId
 import {WishList} from '../../wishlists/entities/wishlist.entity';
 import {Screenshot} from '../../screenshots/entities/screenshot.entity';
 import {Trailer} from '../../trailers/entities/trailer.entity';
+import {Platform} from "../../platforms/entities/platform.entity";
 
 @Entity()
 export class Game {
@@ -25,4 +26,6 @@ export class Game {
     screenshots: Screenshot[];
     @OneToMany(type => Trailer, trailer => trailer.game)
     trailers: Trailer[];
+    @OneToMany(type => Platform, platform => platform.game)
+    platforms: Platform[];
 }
