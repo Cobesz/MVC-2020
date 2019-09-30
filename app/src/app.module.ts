@@ -13,6 +13,7 @@ import {AboutModule} from './modules/about/about.module';
 import {WishlistsModule} from './modules/wishlists/wishlists.module';
 import {GamesModule} from './modules/games/games.module';
 import {ScreenshotsModule} from "./modules/screenshots/screenshots.module";
+import {TrailersModule} from "./modules/trailers/trailers.module";
 
 const configService = new ConfigService(`${process.env.NODE_ENV}.env`);
 
@@ -37,6 +38,7 @@ const password = configService.get('DATABASE_PASSWORD') || 'example';
         WishlistsModule,
         GamesModule,
         ScreenshotsModule,
+        TrailersModule,
         ConfigModule,
         RouterModule.forRoutes(routes),
     ],
