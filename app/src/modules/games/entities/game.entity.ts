@@ -1,6 +1,6 @@
 import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, RelationId} from 'typeorm';
-import {User} from './user.entity';
-import {WishList} from "./wishlist.entity";
+import {WishList} from '../../wishlists/entities/wishlist.entity';
+import {Screenshot} from '../../screenshots/entities/screenshot.entity';
 
 @Entity()
 export class Game {
@@ -20,4 +20,6 @@ export class Game {
     wishListId: number;
     @ManyToOne(type => WishList, wishList => wishList.games, { nullable: false })
     wishList: WishList;
+    @OneToMany(type => Screenshot, screenshot => screenshot.game)
+    screenshots: Screenshot[];
 }

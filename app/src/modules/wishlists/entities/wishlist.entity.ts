@@ -1,6 +1,6 @@
 import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, RelationId} from 'typeorm';
-import {User} from './user.entity';
-import {Game} from './game.entity';
+import {User} from '../../users/entities/user.entity';
+import {Game} from '../../games/entities/game.entity';
 
 @Entity()
 export class WishList {

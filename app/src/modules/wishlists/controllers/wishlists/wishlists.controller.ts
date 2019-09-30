@@ -1,7 +1,7 @@
 import {Controller, Get, Render} from '@nestjs/common';
 import {Crud, CrudController} from '@nestjsx/crud';
 
-import {WishlistsService} from '../../services/watchlists/wishlists.service';
+import {WishlistsService} from '../../services/wishlists.service';
 import {WishList} from '../../entities/wishlist.entity';
 
 @Crud({
