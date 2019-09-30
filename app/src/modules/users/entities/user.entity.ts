@@ -1,4 +1,5 @@
-import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
+import {WishList} from '../../wishlists/entities/wishlist.entity';
 
 @Entity()
 export class User {
@@ -14,4 +15,6 @@ export class User {
     email: string;
     @Column({nullable: false})
     password: string; // TODO: hash this
+    @OneToMany(type => WishList, wishlist => wishlist.user)
+    wishlists: WishList[];
 }

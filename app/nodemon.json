@@ -1,5 +1,5 @@
 {
-  "watch": ["dist", "views"],
-  "ext": "js,hbs",
+  "watch": ["dist", "views", "src"],
+  "ext": "js,hbs,ts",
   "exec": "npm run start"
 }

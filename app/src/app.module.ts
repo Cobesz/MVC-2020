@@ -10,6 +10,11 @@ import {RouterModule, Routes} from 'nest-router';
 import {HomeModule} from './modules/home/home.module';
 import {routes} from './router/routes';
 import {AboutModule} from './modules/about/about.module';
+import {WishlistsModule} from './modules/wishlists/wishlists.module';
+import {GamesModule} from './modules/games/games.module';
+import {ScreenshotsModule} from './modules/screenshots/screenshots.module';
+import {TrailersModule} from './modules/trailers/trailers.module';
+import {PlatformsModule} from './modules/platforms/platforms.module';
 
 const configService = new ConfigService(`${process.env.NODE_ENV}.env`);
 
@@ -31,6 +36,11 @@ const password = configService.get('DATABASE_PASSWORD') || 'example';
         HomeModule,
         AboutModule,
         UsersModule,
+        WishlistsModule,
+        GamesModule,
+        ScreenshotsModule,
+        TrailersModule,
+        PlatformsModule,
         ConfigModule,
         RouterModule.forRoutes(routes),
     ],
