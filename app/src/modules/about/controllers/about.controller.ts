@@ -9,6 +9,6 @@ export class AboutController  {
     @Get()
     @Render('about')
     root() {
-        return {title: 'about Page'};
+        return {title: 'About Page'};
     }
 }
