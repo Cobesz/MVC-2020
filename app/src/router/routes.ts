@@ -2,7 +2,8 @@ import {Routes} from 'nest-router';
 import {HomeModule} from '../modules/home/home.module';
 import {UsersModule} from '../modules/users/users.module';
 import {AboutModule} from '../modules/about/about.module';
-import {WatchlistsModule} from "../modules/users/watchlists.module";
+import {WishlistsModule} from "../modules/users/wishlists.module";
+import {GamesModule} from "../modules/users/games.module";
 
 export const routes: Routes = [
     {
@@ -28,17 +29,11 @@ export const routes: Routes = [
         // ],
     },
     {
-        path: '/watchlists',
-        module: WatchlistsModule,
-        // children: [
-        //     {
-        // path: '/cats',
-        // module: CatsModule,
-        // },
-        // {
-        // path: '/dogs',
-        // module: DogsModule,
-        //     },
-        // ],
+        path: '/wishlists',
+        module: WishlistsModule,
+    },
+    {
+        path: '/games',
+        module: GamesModule,
     },
 ];

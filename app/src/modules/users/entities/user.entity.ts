@@ -1,5 +1,5 @@
 import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
-import {WatchList} from './watchlist.entity';
+import {WishList} from './wishlist.entity';
 
 @Entity()
 export class User {
@@ -15,6 +15,6 @@ export class User {
     email: string;
     @Column({nullable: false})
     password: string; // TODO: hash this
-    @OneToMany(type => WatchList, watchlist => watchlist.user)
-    watchlists: WatchList[];
+    @OneToMany(type => WishList, wishlist => wishlist.user)
+    wishlists: WishList[];
 }
