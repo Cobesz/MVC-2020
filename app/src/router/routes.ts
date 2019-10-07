@@ -20,16 +20,6 @@ export const routes: Routes = [
     {
         path: '/users',
         module: UsersModule,
-        // children: [
-        //     {
-        // path: '/cats',
-        // module: CatsModule,
-        // },
-        // {
-        // path: '/dogs',
-        // module: DogsModule,
-        //     },
-        // ],
     },
     {
         path: '/wishlists',
@@ -50,5 +40,10 @@ export const routes: Routes = [
     {
         path: '/platforms',
         module: PlatformsModule,
+        children: [
+            {
+                path: '/:name',
+                module: PlatformsModule,
+            }],
     },
 ];

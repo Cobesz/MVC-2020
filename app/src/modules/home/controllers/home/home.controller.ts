@@ -10,19 +10,43 @@ export class HomeController {
 
     private platforms = [];
 
+    private games = [];
+
+
     constructor(public service: HomeService) {
 
         this.getPlatforms();
+        this.getGames();
     }
 
-    getPlatforms() {
-        this.service.getPlatforms().subscribe((res) => {
+    private getPlatforms() {
+        this.service.getPlatforms().subscribe((platforms) => {
 
-            for (const platform of res) {
+            for (const platform of platforms) {
                 this.platforms.push(platform);
             }
-            this.logger.log(this.platforms);
         }, error => this.logger.error(error));
+    }
+
+    private getGames() {
+        this.service.getAllGames().subscribe((games) => {
+
+
+            for (const game of games) {
+                // get gameInfo
+                this.service.getSingleGame(game.id).subscribe((info) => {
+                    game.extraInfo = info;
+                    this.games.push(game);
+                    this.logger.log(game.extraInfo);
+                }, error => this.logger.error(error));
+
+            }
+
+        }, error => this.logger.error(error));
+    }
+
+    private getSingleGame(id) {
+
     }
 
     @Get()
@@ -32,6 +56,7 @@ export class HomeController {
         return {
             title: 'The most amazing, flabbergasting and honestly best gaming wish list',
             platforms: this.platforms,
+            games: this.games,
         };
     }
 }

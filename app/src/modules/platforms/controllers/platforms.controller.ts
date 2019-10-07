@@ -13,4 +13,6 @@ export class PlatformsController implements CrudController<Platform> {
     constructor(public service: PlatformsService) {
 
     }
+
+
 }

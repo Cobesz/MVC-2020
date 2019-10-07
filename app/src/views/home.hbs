@@ -1,8 +1,33 @@
-<h1>{{title}}</h1>
+<div class="homeContainer">
+    <h1>{{title}}</h1>
 
-<h2>It now has support for the following platforms:</h2>
-<ul>
-    {{#each platforms}}
-        <li>{{this.name}}</li>
-    {{/each}}</li>
-</ul>
+    <h2>It now has support for the following platforms:</h2>
+
+    <div class="grid-container platforms">
+        {{#each platforms}}
+            <div class="grid-item">{{this.name}}</div>
+
+        {{/each}}
+    </div>
+
+    <h2>And this is an overview of all games</h2>
+    <div class="grid-container gamesOverview">
+        {{#each games}}
+            <div class="grid-item">
+
+
+                <img src="{{this.extraInfo.screenshots.0.thumbnail}}">
+
+
+                <div class="gameDetails">
+                    <h3>{{this.name}}</h3>
+                    <br>
+                    <p>Platforms: </p>
+                    {{#each this.Platforms}}
+                        <span>{{this.name}}</span>
+                    {{/each}}
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
