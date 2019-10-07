@@ -4,9 +4,9 @@ import {UsersModule} from '../modules/users/users.module';
 import {AboutModule} from '../modules/about/about.module';
 import {WishlistsModule} from '../modules/wishlists/wishlists.module';
 import {GamesModule} from '../modules/games/games.module';
-import {ScreenshotsModule} from "../modules/screenshots/screenshots.module";
-import {TrailersModule} from "../modules/trailers/trailers.module";
-import {PlatformsModule} from "../modules/platforms/platforms.module";
+import {ScreenshotsModule} from '../modules/screenshots/screenshots.module';
+import {TrailersModule} from '../modules/trailers/trailers.module';
+import {PlatformsModule} from '../modules/platforms/platforms.module';
 
 export const routes: Routes = [
     {

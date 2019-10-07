@@ -1,2 +1,8 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+<h2>It now has support for the following platforms:</h2>
+<ul>
+    {{#each platforms}}
+        <li>{{this.name}}</li>
+    {{/each}}</li>
+</ul>

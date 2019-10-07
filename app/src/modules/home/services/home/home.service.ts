@@ -1,11 +1,15 @@
-import {Injectable} from '@nestjs/common';
-import {TypeOrmCrudService} from '@nestjsx/crud-typeorm';
-
-import {InjectRepository} from '@nestjs/typeorm';
-import {Repository} from 'typeorm';
+import {Get, HttpService, Injectable} from '@nestjs/common';
+import {map} from 'rxjs/operators';
 
 @Injectable()
 export class HomeService {
-    constructor() {
+    constructor(private http: HttpService) {
+    }
+
+    public getPlatforms() {
+        return this.http.get('https://opencritic.com/api/platform')
+            .pipe(
+                map(response => response.data),
+            );
     }
 }

@@ -44,7 +44,6 @@ const password = configService.get('DATABASE_PASSWORD') || 'example';
         ConfigModule,
         RouterModule.forRoutes(routes),
     ],
-    // controllers: [AppController],
     providers: [AppService],
 })
 export class AppModule {

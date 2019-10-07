@@ -1,5 +1,5 @@
 {
-  "watch": ["dist", "views", "src"],
-  "ext": "js,hbs,ts",
-  "exec": "npm run start"
+  "watch": ["dist", "views", "src", "scss"],
+  "ext": "js,hbs,ts, scss",
+  "exec": "npm run start & npm run watch-css"
 }
