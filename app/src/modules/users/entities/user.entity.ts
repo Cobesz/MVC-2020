@@ -1,7 +1,6 @@
 import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
 import {WishList} from '../../wishlists/entities/wishlist.entity';
 
-
 @Entity()
 export class User {
     @PrimaryGeneratedColumn()

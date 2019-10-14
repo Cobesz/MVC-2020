@@ -7,6 +7,7 @@ import {GamesModule} from '../modules/games/games.module';
 import {ScreenshotsModule} from '../modules/screenshots/screenshots.module';
 import {TrailersModule} from '../modules/trailers/trailers.module';
 import {PlatformsModule} from '../modules/platforms/platforms.module';
+import {LoginModule} from '../modules/login/login.module';
 
 export const routes: Routes = [
     {
@@ -45,5 +46,9 @@ export const routes: Routes = [
                 path: '/:name',
                 module: PlatformsModule,
             }],
+    },
+    {
+        path: '/login',
+        module: LoginModule,
     },
 ];

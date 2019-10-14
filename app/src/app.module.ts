@@ -15,6 +15,7 @@ import {ScreenshotsModule} from './modules/screenshots/screenshots.module';
 import {TrailersModule} from './modules/trailers/trailers.module';
 import {PlatformsModule} from './modules/platforms/platforms.module';
 import {AuthModule} from './core/auth/auth.module';
+import {LoginModule} from "./modules/login/login.module";
 
 const configService = new ConfigService(`${process.env.NODE_ENV}.env`);
 
@@ -43,6 +44,7 @@ const password = configService.get('DATABASE_PASSWORD') || 'example';
         PlatformsModule,
         ConfigModule,
         AuthModule,
+        LoginModule,
         RouterModule.forRoutes(routes),
     ],
     providers: [AppService],

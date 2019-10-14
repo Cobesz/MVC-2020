@@ -23,19 +23,19 @@ export class AuthController {
             }
         }
 
-        return res.status(HttpStatus.FORBIDDEN).json({ message: 'Username or password wrong!' });
+        return res.status(HttpStatus.FORBIDDEN).json({ message: 'Email or password wrong!' });
     }
 
     @Post('register')
     async registerUser(@Response() res: any, @Body() body: User) {
         if (!(body && body.email && body.password)) {
-            return res.status(HttpStatus.FORBIDDEN).json({ message: 'Username and password are required!' });
+            return res.status(HttpStatus.FORBIDDEN).json({ message: 'Email and password are required!' });
         }
 
         let user = await this.userService.getUserByUsername(body.email);
 
         if (user) {
-            return res.status(HttpStatus.FORBIDDEN).json({ message: 'Username exists' });
+            return res.status(HttpStatus.FORBIDDEN).json({ message: 'Email exists' });
         } else {
             user = await this.userService.createUser(body);
             if (user) {

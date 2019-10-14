@@ -38,7 +38,7 @@ export class HomeController {
                 this.service.getSingleGame(game.id).subscribe((info) => {
                     game.extraInfo = info;
                     this.games.push(game);
-                    this.logger.log(game.extraInfo);
+                    // this.logger.log(game.extraInfo);
                 }, error => this.logger.error(error));
 
             }
