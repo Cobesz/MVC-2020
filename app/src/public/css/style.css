@@ -1,2 +1,14 @@
-body {
-  background: green; }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto); }
+
+.homeContainer h2 {
+  margin-bottom: 5vh; }
+
+.homeContainer .grid-item {
+  display: flex;
+  justify-content: center; }
+  .homeContainer .grid-item img {
+    height: 100px; }
