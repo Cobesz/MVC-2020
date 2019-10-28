@@ -1,0 +1,20 @@
+<div class="registerContainer">
+    <h1>{{title}}</h1>
+
+    <form action="/auth/register" method="post">
+        <label>Firstname:</label>
+        <input type="text" name="firstName" required/>
+        <label>Middlename:</label>
+        <input type="text" name="middleName" required/>
+        <label>Lastname:</label>
+        <input type="text" name="lastName" required/>
+
+        <label>Email:</label>
+        <input type="email" name="email" required/>
+
+        <label>Password:</label>
+        <input type="password" name="password" required/>
+
+        <button type="submit">Sign Up</button>
+    </form>
+</div>

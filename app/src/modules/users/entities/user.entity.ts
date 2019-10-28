@@ -4,7 +4,7 @@ import {WishList} from '../../wishlists/entities/wishlist.entity';
 @Entity()
 export class User {
     @PrimaryGeneratedColumn()
-    id: string;
+    id: number;
     @Column({unique: false})
     firstName: string;
     @Column({unique: false})
@@ -13,8 +13,10 @@ export class User {
     lastName: string;
     @Column({nullable: true})
     email: string;
-    @Column({nullable: false})
-    password: string; // TODO: hash this
+    @Column({ length: 100, nullable: true })
+    password: string|undefined;
+    @Column({ length: 100, nullable: true })
+    passwordHash: string|undefined;
     @OneToMany(type => WishList, wishlist => wishlist.user)
     wishlists: WishList[];
 }

@@ -1,5 +1,6 @@
-import {ConfigService} from "./src/config/config.service";
-const configService = new ConfigService(`${process.env.NODE_ENV}.env`);
+const ConfigService = require("./src/config/config.service");
+
+const configService = new ConfigService.ConfigService(`${process.env.NODE_ENV}.env`);
 
 const username = configService.get('DATABASE_USER') || "mysql";
 const password = configService.get('DATABASE_PASSWORD') || "example";

@@ -1,0 +1,20 @@
+<div class="loginContainer">
+    <h1>{{title}}</h1>
+
+    <h2>You are about to login!</h2>
+
+    <div id="login">
+
+        <div class="login-box shadow">
+            <form action="/auth/login" method='post' class='login-form'>
+
+                <i id='username-input-icon' class='icon-user'></i>
+                <input id="email" autocomplete="off" placeholder="E-mail" class='dark' type="text" name="email">
+
+                <i id='password-input-icon' class='icon-lock'></i>
+                <input id="password" autocomplete="off" placeholder="Password" class='dark' type="password" name="password">
+
+                <input type="submit" class='button large' value="Please, login to continue.">
+            </form>
+        </div>
+</div>
