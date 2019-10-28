@@ -8,6 +8,7 @@ import {ScreenshotsModule} from '../modules/screenshots/screenshots.module';
 import {TrailersModule} from '../modules/trailers/trailers.module';
 import {PlatformsModule} from '../modules/platforms/platforms.module';
 import {LoginModule} from '../modules/login/login.module';
+import {RegisterModule} from "../modules/register/register.module";
 
 export const routes: Routes = [
     {
@@ -50,5 +51,9 @@ export const routes: Routes = [
     {
         path: '/login',
         module: LoginModule,
+    },
+    {
+        path: '/register',
+        module: RegisterModule,
     },
 ];
