@@ -49,7 +49,7 @@ const password = configService.get('DATABASE_PASSWORD') || 'example';
         RegisterModule,
         RouterModule.forRoutes(routes),
     ],
-    providers: [AppService],
+    providers: [AppService]
 })
 export class AppModule {
 }

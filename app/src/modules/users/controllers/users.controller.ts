@@ -9,7 +9,8 @@ import {UsersService} from '../services/users.service';
     },
 })
 @Controller()
-export class UsersController implements CrudController<User> {
+// export class UsersController implements CrudController<User> {
+export class UsersController {
     constructor(public service: UsersService) {
 
     }

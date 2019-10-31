@@ -1,7 +1,7 @@
 import {Controller, Get, Logger, Render} from '@nestjs/common';
-import {Crud, CrudController} from '@nestjsx/crud';
+
 import {HomeService} from '../../services/home/home.service';
-import {GamesService} from "../../../games/services/games.service";
+
 
 @Controller()
 
