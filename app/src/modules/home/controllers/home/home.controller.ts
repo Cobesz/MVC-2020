@@ -1,7 +1,6 @@
-import {Controller, Get, Logger, Render} from '@nestjs/common';
+import {Controller, Get, Logger, Render, UseGuards} from '@nestjs/common';
 import {Crud, CrudController} from '@nestjsx/crud';
 import {HomeService} from '../../services/home/home.service';
-import {GamesService} from "../../../games/services/games.service";
 
 @Controller()
 
@@ -53,7 +52,6 @@ export class HomeController {
     @Get()
     @Render('home')
     root() {
-
         return {
             title: 'The most amazing, flabbergasting and honestly best gaming wish list',
             platforms: this.platforms,
