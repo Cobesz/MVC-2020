@@ -17,7 +17,6 @@ export class LoginController {
 
         return {
             title: 'Login',
-
         };
     }
 }

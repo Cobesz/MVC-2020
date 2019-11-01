@@ -1,22 +1,22 @@
-import {Injectable, Logger} from '@nestjs/common';
-import { UsersService } from '../../modules/users/services/users.service';
-import { JwtService } from '@nestjs/jwt';
+import * as jwt from 'jsonwebtoken';
+import {Body, HttpStatus, Injectable, Response} from '@nestjs/common';
+import {UsersService} from '../../modules/users/services/users.service';
+import {User} from '../../modules/users/entities/user.entity';
+import {JwtService} from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
-    constructor(
-        private readonly usersService: UsersService,
-        private readonly jwtService: JwtService,
-    ) {}
+    constructor(private readonly userService: UsersService,
+                private readonly jwtService: JwtService) {
+    }
 
-    async validateUser(username: string, pass: string): Promise<any> {
-        const user = await this.usersService.findOne(username);
-        if (user && user.password === pass) {
-            const { password, ...result } = user;
-            return result;
-        }
+    async createToken(id: number, username: string) {
+        const expiresIn = 60 * 60;
+        const secretOrKey = 'secret';
+        const user = {userId: id, username};
+        const token = jwt.sign(user, secretOrKey, {expiresIn});
 
-        return null;
+        return {expires_in: expiresIn, token};
     }
 
     async login(user: any) {

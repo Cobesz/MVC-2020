@@ -1,6 +1,6 @@
-import {Controller, Get, Render, UseGuards} from '@nestjs/common';
+import {Controller, Get, Request , Render, UseGuards} from '@nestjs/common';
 import {AboutService} from '../services/about.service';
-import {AuthGuard} from "@nestjs/passport";
+import {AuthGuard} from '@nestjs/passport';
 
 @Controller()
 export class AboutController  {
@@ -11,8 +11,8 @@ export class AboutController  {
 
     @UseGuards(AuthGuard('jwt'))
     @Get()
-    @Render('about')
-    root() {
-        return {title: 'About Page'};
+    @UseGuards(AuthGuard('jwt')) // protected route
+    getProfile(@Request() req) {
+        return req.user;
     }
 }
