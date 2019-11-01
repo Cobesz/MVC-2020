@@ -8,8 +8,7 @@ export class AboutController  {
 
     }
 
-
-    @UseGuards(AuthGuard('jwt'))
+    
     @Get()
     @UseGuards(AuthGuard('jwt')) // protected route
     getProfile(@Request() req) {
