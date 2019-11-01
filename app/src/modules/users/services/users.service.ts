@@ -1,4 +1,4 @@
-import {Injectable} from '@nestjs/common';
+import {Injectable, Logger} from '@nestjs/common';
 import {TypeOrmCrudService} from '@nestjsx/crud-typeorm';
 import {User} from '../entities/user.entity';
 import {InjectRepository} from '@nestjs/typeorm';
@@ -40,6 +40,8 @@ export class UsersService extends TypeOrmCrudService<User> {
     }
 
     async compareHash(password: string | undefined, hash: string | undefined): Promise<boolean> {
+        Logger.log(password)
+        Logger.log(hash)
         return bcrypt.compare(password, hash);
     }
 

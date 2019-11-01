@@ -58,7 +58,7 @@ export const routes: Routes = [
         module: RegisterModule,
     },
     {
-        path: 'auth/login',
+        path: 'auth',
         module: AuthModule,
     },
 ];
