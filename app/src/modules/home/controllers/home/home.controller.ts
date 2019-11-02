@@ -1,6 +1,7 @@
 import {Controller, Get, Logger, Render, Response, Session, UseGuards} from '@nestjs/common';
 import {Crud, CrudController} from '@nestjsx/crud';
 import {HomeService} from '../../services/home/home.service';
+import * as jwt from 'jsonwebtoken';
 
 
 @Controller()
@@ -53,11 +54,27 @@ export class HomeController {
     @Get()
     @Render('home')
     root(@Session() session) {
-        return {
-            title: 'The most amazing, flabbergasting and honestly best gaming wish list',
-            platforms: this.platforms,
-            games: this.games,
-            user: session.userFirstName,
-        };
+
+
+        if (session.jwtToken) {
+            const decoded: any = jwt.decode(session.jwtToken);
+            Logger.log(decoded.name);
+
+            return {
+                title: 'The most amazing, flabbergasting and honestly best gaming wish list',
+                platforms: this.platforms,
+                games: this.games,
+                user: {
+                    firstName: decoded.name,
+                    isAdmin: decoded.isAdmin,
+                },
+
+            };
+        } else {
+            return {
+                title: 'The most amazing, flabbergasting and honestly best gaming wish list',
+                platforms: this.platforms,
+            };
+        }
     }
 }

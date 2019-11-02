@@ -10,19 +10,17 @@ export class AuthService {
                 private readonly jwtService: JwtService) {
     }
 
-    async createToken(id: number, username: string) {
+    async createToken(currentUser) {
         const expiresIn = 60 * 60;
         const secretOrKey = 'secret';
-        const user = {userId: id, username};
+        const user = {
+            userId: currentUser.id,
+            email: currentUser.email,
+            name: currentUser.firstName,
+            isAdmin: currentUser.admin,
+        };
         const token = jwt.sign(user, secretOrKey, {expiresIn});
 
         return {expires_in: expiresIn, token};
-    }
-
-    async login(user: any) {
-        const payload = { username: user.username, sub: user.userId };
-        return {
-            access_token: this.jwtService.sign(payload),
-        };
     }
 }

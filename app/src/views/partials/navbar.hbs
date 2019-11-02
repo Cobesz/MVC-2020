@@ -16,9 +16,11 @@
         </ul>
     </div>
     <div class="currentUser">
-        {{#if user}}
-            <p>Ingelogde gebruiker: {{user}}</p>
-
+        {{#if user.firstName}}
+            <p>Ingelogde gebruiker: {{user.firstName}}</p>
+            {{#if user.isAdmin}}
+                <p>Je bent ook nog een een gigantische baas!</p>
+            {{/if}}
             <a href="/auth/logout"> Log uit</a>
 
 
