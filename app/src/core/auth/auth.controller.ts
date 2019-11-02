@@ -17,13 +17,15 @@ export class AuthController {
         }
 
         const user = await this.userService.getUserByUsername(body.email);
-
+        Logger.log(user);
         if (user) {
             if (await this.userService.compareHash(body.password, user.passwordHash)) {
                 return res.status(HttpStatus.OK).json(await this.authService.createToken(user.id, user.email).then((data) => {
                     req.session.jwtToken = data.token; // setting the token in the session
                     req.session.userId = user.id;
                     req.session.userFirstName = user.firstName;
+                    req.session.isAdmin = user.admin;
+
                     res.redirect('/');
                 }));
             }

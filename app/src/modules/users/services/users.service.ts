@@ -40,8 +40,6 @@ export class UsersService extends TypeOrmCrudService<User> {
     }
 
     async compareHash(password: string | undefined, hash: string | undefined): Promise<boolean> {
-        Logger.log(password)
-        Logger.log(hash)
         return bcrypt.compare(password, hash);
     }
 

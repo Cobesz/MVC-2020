@@ -57,7 +57,11 @@ export class HomeController {
             title: 'The most amazing, flabbergasting and honestly best gaming wish list',
             platforms: this.platforms,
             games: this.games,
-            user: session.userFirstName,
+            user: {
+                firstName: session.userFirstName,
+                isAdmin: session.isAdmin,
+            },
+
         };
     }
 }
