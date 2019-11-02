@@ -1,4 +1,4 @@
-import {Controller, Get, Logger, Render, UseGuards} from '@nestjs/common';
+import {Controller, Get, Logger, Render, Response, Session, UseGuards} from '@nestjs/common';
 import {Crud, CrudController} from '@nestjsx/crud';
 import {HomeService} from '../../services/home/home.service';
 
@@ -52,11 +52,12 @@ export class HomeController {
 
     @Get()
     @Render('home')
-    root() {
+    root(@Session() session) {
         return {
             title: 'The most amazing, flabbergasting and honestly best gaming wish list',
             platforms: this.platforms,
             games: this.games,
+            user: session.userFirstName,
         };
     }
 }

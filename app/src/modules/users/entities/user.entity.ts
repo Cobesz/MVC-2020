@@ -17,6 +17,8 @@ export class User {
     password: string|undefined;
     @Column({ length: 100, nullable: true })
     passwordHash: string|undefined;
+    @Column({unique: false})
+    admin: boolean;
     @OneToMany(type => WishList, wishlist => wishlist.user)
     wishlists: WishList[];
 }
