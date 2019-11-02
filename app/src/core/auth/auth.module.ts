@@ -21,18 +21,4 @@ import {jwtConstants} from './constants';
     controllers: [AuthController],
     exports: [AuthService],
 })
-export class AuthModule {
-    // public configure(user: MiddlewareConsumer) {
-    //     user
-    //         .apply(passport.authenticate('jwt', {session: true}))
-    //         .forRoutes(
-    //             {
-    //                 path: 'about',
-    //                 method: RequestMethod.ALL,
-    //             },
-    //             {
-    //                 path: 'about/*',
-    //                 method: RequestMethod.ALL,
-    //             });
-    // }
-}
+export class AuthModule {}
