@@ -18,7 +18,7 @@ describe('AppController', () => {
     expect(appController.root()).toStrictEqual({ title: 'Home Page' });
   });
 
-  it('renders /about', () => {
+  it('renders /profile', () => {
     expect(appController.about()).toStrictEqual({ title: 'About Page' });
   });
 });

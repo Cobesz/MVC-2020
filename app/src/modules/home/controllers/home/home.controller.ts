@@ -58,7 +58,6 @@ export class HomeController {
 
         if (session.jwtToken) {
             const decoded: any = jwt.decode(session.jwtToken);
-            Logger.log(decoded.name);
 
             return {
                 title: 'The most amazing, flabbergasting and honestly best gaming wish list',
@@ -74,6 +73,7 @@ export class HomeController {
             return {
                 title: 'The most amazing, flabbergasting and honestly best gaming wish list',
                 platforms: this.platforms,
+                games: this.games,
             };
         }
     }

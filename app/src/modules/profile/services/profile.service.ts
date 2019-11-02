@@ -5,7 +5,7 @@ import {InjectRepository} from '@nestjs/typeorm';
 import {Repository} from 'typeorm';
 
 @Injectable()
-export class AboutService {
+export class ProfileService {
     constructor() {
     }
 }

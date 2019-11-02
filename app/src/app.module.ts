@@ -8,7 +8,7 @@ import {ConfigModule} from './config/config.module';
 import {RouterModule, Routes} from 'nest-router';
 import {HomeModule} from './modules/home/home.module';
 import {routes} from './router/routes';
-import {AboutModule} from './modules/about/about.module';
+import {ProfileModule} from './modules/profile/profile.module';
 import {WishlistsModule} from './modules/wishlists/wishlists.module';
 import {GamesModule} from './modules/games/games.module';
 import {ScreenshotsModule} from './modules/screenshots/screenshots.module';
@@ -36,7 +36,7 @@ const password = configService.get('DATABASE_PASSWORD') || 'example';
             synchronize: true,
         }),
         HomeModule,
-        AboutModule,
+        ProfileModule,
         UsersModule,
         WishlistsModule,
         GamesModule,
