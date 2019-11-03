@@ -8,15 +8,12 @@ export class User {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @IsString({ always: true }) // validator
     @Column({unique: false})
     firstName: string;
 
-    @IsString({ always: true }) // validator
     @Column({unique: false})
     middleName: string;
 
-    @IsString() // validator
     @Column({nullable: false})
     lastName: string;
 
@@ -30,7 +27,6 @@ export class User {
     @Column({length: 100, nullable: true})
     passwordHash: string | undefined;
 
-    @IsBoolean() // validator
     @Column({unique: false})
     admin: boolean;
 
