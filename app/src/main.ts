@@ -9,7 +9,7 @@ import * as helmet from 'helmet';
 import * as passport from 'passport';
 import flash = require('connect-flash');
 import session = require('express-session');
-import {ValidationPipe} from "@nestjs/common";
+import {ValidationPipe} from '@nestjs/common';
 
 async function bootstrap() {
     const app = await NestFactory.create<NestExpressApplication>(AppModule);

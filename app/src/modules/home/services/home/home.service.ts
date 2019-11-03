@@ -27,4 +27,11 @@ export class HomeService {
                 map(response => response.data),
             );
     }
+
+    public filterGamesByPlatform(platform) {
+        return this.http.get('https://opencritic.com/api/game?platforms=' + platform)
+            .pipe(
+                map(response => response.data),
+            );
+    }
 }

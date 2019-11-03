@@ -30,6 +30,20 @@ export class HomeController {
         }, error => this.logger.error(error));
     }
 
+    private filterGamesByPlatform(platform) { // used for filtering
+        this.service.filterGamesByPlatform(platform).subscribe((games) => {
+
+            for (const game of games) {
+                // get gameInfo
+                this.service.getSingleGame(game.id).subscribe((info) => {
+                    game.extraInfo = info;
+                    this.games.push(game);
+                }, error => this.logger.error(error));
+
+            }
+        }, error => this.logger.error(error));
+    }
+
     private getGames() {
         this.service.getAllGames().subscribe((games) => {
 
