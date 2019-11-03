@@ -10,6 +10,7 @@ import {PlatformsModule} from '../modules/platforms/platforms.module';
 import {LoginModule} from '../modules/login/login.module';
 import {RegisterModule} from "../modules/register/register.module";
 import {AuthModule} from "../core/auth/auth.module";
+import {AdminModule} from "../modules/admin/admin.module";
 
 export const routes: Routes = [
     {
@@ -60,5 +61,9 @@ export const routes: Routes = [
     {
         path: 'auth',
         module: AuthModule,
+    },
+    {
+        path: '/admin',
+        module: AdminModule,
     },
 ];

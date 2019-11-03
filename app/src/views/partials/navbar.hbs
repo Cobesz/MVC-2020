@@ -21,7 +21,8 @@
         {{#if user.firstName}}
             <p>Ingelogde gebruiker: {{user.firstName}}</p>
             {{#if user.isAdmin}}
-                <p>Je bent ook nog een een gigantische baas!</p>
+                <a href="/admin">Admin pagina</a>
+
             {{/if}}
             <a href="/auth/logout"> Log uit</a>
 
