@@ -3,7 +3,6 @@ import {AppModule} from './app.module';
 import {NestExpressApplication} from '@nestjs/platform-express';
 import {join} from 'path';
 import hbs = require('hbs');
-import * as sassMiddleware from 'node-sass-middleware';
 import * as helmet from 'helmet';
 
 import * as passport from 'passport';
