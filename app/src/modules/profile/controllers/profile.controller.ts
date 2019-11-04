@@ -20,7 +20,10 @@ export class ProfileController {
 
             return {
                 title: 'Profile Page',
-                user: decoded.name,
+                user: {
+                    firstName: decoded.name,
+                    isAdmin: decoded.isAdmin,
+                },
             };
         } else {
             res.redirect('/');
